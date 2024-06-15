@@ -1,15 +1,40 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-
-const parent=React.createElement("div",{id:"parent"},React.createElement("div",{"id":"child"},React.createElement("h1",{},"I am h1 tag")))
-
-
+import Header from "./components/Header";
+import Body from "./components/Body"
 
 
+/*
+* Header
+*   Logo
+*   Nav Items
+* Body
+*   Search
+*   RestaurantContainer
+*      RestaurantCard
+* Footer
+*   Copyright
+*   Links
+*   Address
+*   Contact
+*/
 
-// const heading = React.createElement("h1", {
-//     id:"heading",
-//     xyz:"abc"
-// }, "Hello World From React");
+
+
+
+
+
+
+
+const AppLayout =()=>(
+   
+    <div className="app">
+         <Header />
+         <Body />
+    </div>
+)
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<AppLayout />);
+
