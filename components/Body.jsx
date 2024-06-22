@@ -14,7 +14,6 @@ const Body = ()=>{
     const json=await data.json();
     setResList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
     setfilterRes(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
-    console.log("json body",json)
     };
    
     const [searchText,setSearchText]=useState("")
