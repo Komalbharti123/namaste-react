@@ -1,17 +1,20 @@
-import {LOGO_URL} from "../utils/constants"
+import {LOGO_URL} from "../../utils/constants"
 import {useState} from "react"
 import {Link} from "react-router-dom"
+import useOnlineStatus from "../../utils/useOnlineStatus"
 const Header = ()=>{
+    const onlineStatus = useOnlineStatus();
     const [loginButton,setLoginButton]=useState("Login")
     return(
-    <div className="header">
+    <div className="flex justify-between">
         <div className="logo-container">
-            <img 
-            className="logo"
+            <img className="w-40"
             src={LOGO_URL}></img>
         </div>
         <div className="nav-items">
-            <ul>
+            <ul className="flex p-4 m-4">
+                <li>onlineStatus:{onlineStatus? "🟢":"🔴"}</li>
+                <li><Link to="/grocery">Grocery</Link></li>
                 <li><Link to ="/">Home</Link></li>
                 <li> <Link to ="/about">About Us</Link></li>
                 <li ><Link to="/contactUs">Contact Us</Link></li>
